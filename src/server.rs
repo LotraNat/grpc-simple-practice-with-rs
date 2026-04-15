@@ -58,7 +58,6 @@ impl kv_store_server::KvStore for KvStore {
             Some(v) => Ok(Response::new(GetReply{get_value: v.clone() })),
             None    => Err(Status::not_found("Key does not exist.")),
         }
-
     }
 }
 
