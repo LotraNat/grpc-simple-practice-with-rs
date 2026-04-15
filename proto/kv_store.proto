@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package kv_store;
+
+service KvStore {
+  rpc Example (ExampleRequest) returns (ExampleReply) {}
+
+  // TODO: Protocol buffers
+  rpc Echo (EchoRequest) returns (EchoReply) {}
+  rpc Put (PutRequest) returns (PutReply) {}
+  rpc Get (GetRequest) returns (GetReply) {}
+}
+
+message ExampleRequest {
+  uint32 input = 1;
+}
+
+message ExampleReply {
+  uint32 output = 1;
+}
+
+// TODO: Protocol buffers
+
+message EchoRequest {
+  string reqString = 1;
+
+}
+
+message EchoReply {
+  string resString = 1;
+}
+
+message PutRequest {
+  bytes putKey = 1;
+  bytes putValue = 2;
+}
+
+message PutReply {
+}
+
+message GetRequest {
+  bytes getKey = 1;
+}
+
+message GetReply {
+  bytes getValue = 1;
+}
+
+
